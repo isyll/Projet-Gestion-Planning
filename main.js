@@ -238,7 +238,7 @@ window.onload = async function () {
       document.getElementById("search-global").appendChild(suggestion);
 
       e.target.addEventListener("input", async function () {
-        let results = await Datas.searchTerm(e.target.value.toLowerCase());
+        let results = await Datas.search(e.target.value.toLowerCase());
         suggestion.innerHTML = "";
         for (let i of results) {
           let suggest = document.createElement("div");

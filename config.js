@@ -29,7 +29,7 @@ const Datas = {
     if (base === undefined) {
       datas = await fetch(this.filePath);
       datas = await datas.json();
-    } else datas = typeof base === 'string' ? JSON.parse(base) : base;
+    } else datas = typeof base === "string" ? JSON.parse(base) : base;
 
     localStorage.setItem("datas", JSON.stringify(datas));
   },
@@ -48,7 +48,7 @@ const Datas = {
     return values;
   },
 
-  async searchTerm(term) {
+  async search(term) {
     const values = [];
     for (const i of this.items) {
       const name = await this.retrieve(i, "name");
