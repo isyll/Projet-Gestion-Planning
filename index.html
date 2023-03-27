@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet Gestion Planning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="vars.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="#" />
+  </head>
+  <body>
+    <main id="root">
+      <div id="menu">
+        <div id="search-global">
+          <input
+            type="search"
+            placeholder="Rechercher"
+            id="search-global-input"
+            name="search-global-input"
+            class="search"
+          />
+        </div>
+        <div id="menu-items">
+          <div class="menu-item" id="teachers">
+            <div class="menu-item__part menu-item__icon">
+              <i class="fa-solid fa-person-chalkboard"></i>
+            </div>
+            <div class="menu-item__part menu-item__number">6</div>
+            <div class="menu-item__part menu-item__label _label">
+              Enseignants
+            </div>
+            <div class="menu-item__part menu-item__add">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+          <div class="menu-item" id="classrooms">
+            <div class="menu-item__part menu-item__icon">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="menu-item__part menu-item__number">6</div>
+            <div class="menu-item__part menu-item__label _label">Salles</div>
+            <div class="menu-item__part menu-item__add">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+          <div class="menu-item" id="classes">
+            <div class="menu-item__part menu-item__icon">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+            <div class="menu-item__part menu-item__number">6</div>
+            <div class="menu-item__part menu-item__label _label">Classes</div>
+            <div class="menu-item__part menu-item__add">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+          <div class="menu-item" id="subjects">
+            <div class="menu-item__part menu-item__icon">
+              <i class="menu-item__part fa-solid fa-book"></i>
+            </div>
+            <div class="menu-item__part menu-item__number">6</div>
+            <div class="menu-item__part menu-item__label _label">Modules</div>
+            <div class="menu-item__part menu-item__add">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div id="search-items">
+          <select
+            name="search-items-select"
+            id="search-items-select"
+            class="search"
+          >
+            <option value="none"></option>
+          </select>
+        </div>
+      </div>
+      <div id="main">
+        <div id="header">
+          <h2 id="header-title"></h2>
+          <div id="theme-preferences">
+            <div id="checkbox">
+              <div id="checkbox-ball"></div>
+            </div>
+          </div>
+          <div id="planning-infos"></div>
+        </div>
+        <div id="planning">
+          <div id="timetable">
+            <header class="timetable-row">
+              <div class="dayofweek"></div>
+              <div class="timetable-row__col timetable-row__col--1">8H</div>
+              <div class="timetable-row__col timetable-row__col--2"></div>
+              <div class="timetable-row__col timetable-row__col--3">9H</div>
+              <div class="timetable-row__col timetable-row__col--4"></div>
+              <div class="timetable-row__col timetable-row__col--5">10H</div>
+              <div class="timetable-row__col timetable-row__col--6"></div>
+              <div class="timetable-row__col timetable-row__col--7">11H</div>
+              <div class="timetable-row__col timetable-row__col--8"></div>
+              <div class="timetable-row__col timetable-row__col--9">12H</div>
+              <div class="timetable-row__col timetable-row__col--10"></div>
+              <div class="timetable-row__col timetable-row__col--11">13H</div>
+              <div class="timetable-row__col timetable-row__col--12"></div>
+              <div class="timetable-row__col timetable-row__col--13">14H</div>
+              <div class="timetable-row__col timetable-row__col--14"></div>
+              <div class="timetable-row__col timetable-row__col--15">15H</div>
+              <div class="timetable-row__col timetable-row__col--16"></div>
+              <div class="timetable-row__col timetable-row__col--17">16H</div>
+              <div class="timetable-row__col timetable-row__col--18"></div>
+              <div class="timetable-row__col timetable-row__col--19">17H</div>
+              <div class="timetable-row__col timetable-row__col--20"></div>
+            </header>
+            <div class="timetable-row" id="day1">
+              <div class="dayofweek">
+                <div class="dayofweek__label _label">Lundi</div>
+                <div class="dayofweek__add">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+              <div
+                class="timetable-row__col timetable-row__col--1 time_8h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--2 time_8h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--3 time_9h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--4 time_9h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--5 time_10h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--6 time_10h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--7 time_11h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--8 time_11h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--9 time_12h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--10 time_12h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--11 time_13h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--12 time_13h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--13 time_14h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--14 time_14h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--15 time_15h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--16 time_15h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--17 time_16h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--18 time_16h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--19 time_17h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--20 time_17h-30mn"
+              ></div>
+            </div>
+
+            <div class="timetable-row" id="day2">
+              <div class="dayofweek">
+                <div class="dayofweek__label _label">Mardi</div>
+                <div class="dayofweek__add">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+              <div
+                class="timetable-row__col timetable-row__col--1 time_8h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--2 time_8h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--3 time_9h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--4 time_9h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--5 time_10h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--6 time_10h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--7 time_11h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--8 time_11h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--9 time_12h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--10 time_12h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--11 time_13h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--12 time_13h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--13 time_14h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--14 time_14h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--15 time_15h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--16 time_15h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--17 time_16h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--18 time_16h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--19 time_17h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--20 time_17h-30mn"
+              ></div>
+            </div>
+
+            <div class="timetable-row" id="day3">
+              <div class="dayofweek">
+                <div class="dayofweek__label _label">Mercredi</div>
+                <div class="dayofweek__add">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+              <div
+                class="timetable-row__col timetable-row__col--1 time_8h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--2 time_8h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--3 time_9h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--4 time_9h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--5 time_10h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--6 time_10h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--7 time_11h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--8 time_11h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--9 time_12h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--10 time_12h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--11 time_13h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--12 time_13h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--13 time_14h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--14 time_14h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--15 time_15h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--16 time_15h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--17 time_16h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--18 time_16h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--19 time_17h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--20 time_17h-30mn"
+              ></div>
+            </div>
+
+            <div class="timetable-row" id="day4">
+              <div class="dayofweek">
+                <div class="dayofweek__label _label">Jeudi</div>
+                <div class="dayofweek__add">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+              <div
+                class="timetable-row__col timetable-row__col--1 time_8h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--2 time_8h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--3 time_9h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--4 time_9h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--5 time_10h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--6 time_10h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--7 time_11h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--8 time_11h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--9 time_12h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--10 time_12h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--11 time_13h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--12 time_13h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--13 time_14h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--14 time_14h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--15 time_15h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--16 time_15h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--17 time_16h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--18 time_16h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--19 time_17h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--20 time_17h-30mn"
+              ></div>
+            </div>
+
+            <div class="timetable-row" id="day5">
+              <div class="dayofweek">
+                <div class="dayofweek__label _label">Vendredi</div>
+                <div class="dayofweek__add">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+              <div
+                class="timetable-row__col timetable-row__col--1 time_8h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--2 time_8h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--3 time_9h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--4 time_9h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--5 time_10h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--6 time_10h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--7 time_11h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--8 time_11h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--9 time_12h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--10 time_12h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--11 time_13h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--12 time_13h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--13 time_14h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--14 time_14h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--15 time_15h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--16 time_15h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--17 time_16h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--18 time_16h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--19 time_17h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--20 time_17h-30mn"
+              ></div>
+            </div>
+            <div class="timetable-row" id="day6">
+              <div class="dayofweek">
+                <div class="dayofweek__label _label">Samedi</div>
+                <div class="dayofweek__add">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+              <div
+                class="timetable-row__col timetable-row__col--1 time_8h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--2 time_8h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--3 time_9h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--4 time_9h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--5 time_10h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--6 time_10h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--7 time_11h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--8 time_11h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--9 time_12h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--10 time_12h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--11 time_13h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--12 time_13h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--13 time_14h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--14 time_14h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--15 time_15h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--16 time_15h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--17 time_16h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--18 time_16h-30mn"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--19 time_17h"
+              ></div>
+              <div
+                class="timetable-row__col timetable-row__col--20 time_17h-30mn"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

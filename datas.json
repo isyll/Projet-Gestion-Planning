@@ -1,0 +1,152 @@
+{
+  "classes": [
+    {
+      "name": "L2 GLRS A",
+      "size": 40
+    },
+    {
+      "name": "L2 GLRS B"
+    },
+    {
+      "name": "L2 ETSE"
+    },
+    {
+      "name": "L1 A"
+    },
+    {
+      "name": "IAGE B"
+    },
+    {
+      "name": "L2 CDSD"
+    }
+  ],
+
+  "classrooms": [
+    {
+      "name": "101",
+      "capacity": null
+    },
+    {
+      "name": "102",
+      "capacity": null
+    },
+    {
+      "name": "103",
+      "capacity": null
+    },
+    {
+      "name": "104",
+      "capacity": null
+    },
+    {
+      "name": "201",
+      "capacity": null
+    },
+    {
+      "name": "Incub",
+      "capacity": null
+    }
+  ],
+
+  "teachers": [
+    {
+      "name": "aly"
+    },
+    {
+      "name": "baila"
+    },
+    {
+      "name": "ndoye"
+    },
+    {
+      "name": "mbaye"
+    },
+    {
+      "name": "djiby"
+    },
+    {
+      "name": "seckouba"
+    }
+  ],
+
+  "subjects": [
+    {
+      "name": "algo"
+    },
+    {
+      "name": "python"
+    },
+    {
+      "name": "LC"
+    },
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "JAVA"
+    },
+    {
+      "name": "php"
+    }
+  ],
+
+  "timeIntervals": [
+    "8H-9H",
+    "9H-10H",
+    "10H-11H",
+    "11H-12H",
+    "12H-13H",
+    "13H-14H",
+    "14H-15H",
+    "15H-16H",
+    "16H-17H"
+  ],
+
+  "plannings": [
+    [
+      {
+        "classrooms": "102",
+        "classes": "L2 CDSD",
+        "teachers": "aly",
+        "subjects": "python",
+        "start": "9H",
+        "end": "12H",
+        "id": 1
+      },
+      {
+        "classrooms": "201",
+        "classes": "L2 CDSD",
+        "teachers": "baila",
+        "subjects": "php",
+        "start": "13H",
+        "end": "17H",
+        "id": 2
+      }
+    ],
+    [],
+    [
+      {
+        "classrooms": "102",
+        "classes": "L2 CDSD",
+        "teachers": "aly",
+        "subjects": "JavaScript",
+        "start": "16H",
+        "end": "17H",
+        "id": 3
+      }
+    ],
+    [
+      {
+        "classrooms": "Incub",
+        "classes": "L2 CDSD",
+        "teachers": "mbaye",
+        "subjects": "LC",
+        "start": "8H",
+        "end": "9H",
+        "id": 4
+      }
+    ],
+    [],
+    []
+  ]
+}

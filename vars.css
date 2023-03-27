@@ -1,0 +1,15 @@
+:root {
+  --subjects-color1: #71afac;
+  --subjects-color2: #dc45ce;
+  --subjects-color3: #d66163;
+  --subjects-color4: #f78001;
+  --subjects-color5: #bd8486;
+  --green: #569656;
+  --classrooms: #428d42;
+  --teachers: #3baeea;
+  --classes: #ef810c;
+  --subjects: #eb262a;
+  --padding-normal: 15px;
+  --border-radius-normal: 10px;
+  --padding-dayofweek: 15px;
+}

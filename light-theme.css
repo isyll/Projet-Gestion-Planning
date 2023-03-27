@@ -1,0 +1,13 @@
+:root {
+  --background: #f3f3f3;
+  --header: #efafb0;
+  --rows: #c0bfc6;
+  --rows-title: #ed9b9e;
+  --menu-items: #dae1e4;
+  --menu: #b7c3cc;
+  --color-header: #1a1a1a;
+}
+
+#checkbox-ball {
+  transform: translateX(22px);
+}
